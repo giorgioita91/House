@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Console from "./Component/Console";
+import Facciata from "./Component/Facciata";
+import Prato from "./Component/Prato";
+import Tetto from "./Component/Tetto";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      coloreGiorno: "rgb(112, 203, 233)",
+      stato: true,
+      colorePorta: "rgb(128, 0, 0)",
+      statoPorta: true
+    };
+  }
+
+  changeColorGiorno = () => {
+    this.setState({
+      stato: !this.state.stato
+    });
+  };
+
+  changePorta = () => {
+    this.setState({
+      statoPorta: !this.state.statoPorta,
+    });
+  };
+
+
+  render() {
+    return (
+      <div
+        className="container"
+        style={{
+          backgroundColor: (this.state.stato)
+            ? this.state.coloreGiorno
+            : "rgb(25, 25, 112)",
+        }}
+      >
+        <Tetto />
+        <Facciata stato={this.statoPorta} />
+        <Prato />
+        <Console bckG={this.changeColorGiorno} bckP={this.changePorta}/>
+      </div>
+    );
+  }
 }
-
-export default App;
