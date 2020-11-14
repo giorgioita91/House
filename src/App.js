@@ -42,7 +42,7 @@ export default class App extends Component {
         }}
       >
         <Tetto />
-        <Facciata stato={this.statoPorta} />
+        <Facciata stato={this.state.statoPorta} colore={this.state.colorePorta}/>
         <Prato />
         <Console bckG={this.changeColorGiorno} bckP={this.changePorta}/>
       </div>

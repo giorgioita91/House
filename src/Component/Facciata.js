@@ -21,8 +21,8 @@ export default class Facciata extends Component {
         <div
           id="porta"
           style={{
-            backgroundColor: (this.state.statoPorta)
-              ? "rgb(128, 0, 0)"
+            backgroundColor: (this.props.stato)
+              ? this.props.colore
               : "rgb(0,200,0)"
           }}
         ></div>
