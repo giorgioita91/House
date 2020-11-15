@@ -14,27 +14,26 @@ export default class Facciata extends Component {
           <div
             className="finestraSx"
             style={{
-              backgroundColor: this.props.statoF
+              backgroundColor: this.props.statoCF
                 ? this.props.coloreF
-                : "rgb(255, 246, 167)",
+                : "rgb(255, 253, 143)",
             }}
           ></div>
           <div
             className="finestraDx"
             style={{
-              backgroundColor: this.props.statoF
+              backgroundColor: this.props.statoCF
                 ? this.props.coloreF
-                : "rgb(255, 246, 167)",
-                
+                : "rgb(255, 253, 143)",
             }}
           ></div>
         </div>
         <div
           id="porta"
           style={{
-            backgroundColor: this.props.statoP
+            backgroundColor: this.props.statoCP
               ? this.props.coloreP
-              : "rgb(255, 246, 167)",
+              : "rgb(255, 253, 143)",
           }}
         ></div>
       </div>

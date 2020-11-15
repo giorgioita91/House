@@ -6,105 +6,131 @@ import Prato from "./Component/Prato";
 import Tetto from "./Component/Tetto";
 
 export default class App extends Component {
-  
-  
   constructor(props) {
     super(props);
-    
-    this.state = {
-      coloreC: "rgb(112, 203, 233)",
-      statoC: true,
-      colorePorta: "rgb(128, 0, 0)",
-      statoPorta: true,
-      coloreFinestre: "rgb(128, 0, 0)",
-      statoFinestre: true,
-      coloreBottone: "rgb(25, 25, 112)",
-      statoBottone: true,
-      colorWord: "rgb(112, 203, 233)",
-      statoColorWord: true,
-      bottoneCielo: "Notte",
-      statoBottoneCielo: true,
 
-      bottonePorta: "Porta chiusa",
-      statoBottonePorta: true
+    this.state = {
+      //COLORE CIELO
+      coloreCielo: "rgb(112, 203, 233)",
+      statoColoreCielo: true,
+      //BOTTONE COLORE CIELO
+      bottoneColoreCielo: "rgb(10, 60, 151)",
+      statoBottoneColoreCielo: true,
+      //BOTTONE TESTO CIELO
+      bottoneTestoCielo: "Notte",
+      statoBottoneTestoCielo: true,
+      //BOTTONE COLORE TESTO CIELO
+      coloreTestoCielo: "rgb(112, 203, 233)",
+      statoColoreTestoCielo: true,
+      //COLORE PORTA
+      colorePorta: "rgb(128, 0, 0)",
+      statoColorePorta: true,
+      //BOTTONE COLORE PORTA
+      bottoneColorePorta: "rgb(255, 253, 143)",
+      statoBottoneColorePorta: true,
+      //BOTTONE TESTO PORTA
+      bottoneTestoPorta: "Apri la porta",
+      statoBottoneTestoPorta: true,
+      //BOTTONE COLORE TESTO PORTA
+      coloreTestoPorta: "rgb(128, 0, 0)",
+      statoColoreTestoPorta: true,
+      //COLORE FINESTRE
+      coloreFinestre: "rgb(128, 0, 0)",
+      statoColoreFinestre: true,
+      //BOTTONE COLORE FINESTRE
+      bottoneColoreFinestre: "rgb(255, 253, 143)",
+      statoBottoneColoreFinestre: true,
+      //BOTTONE TESTO FINESTRE
+      bottoneTestoFinestre: "Accendi le luci",
+      statoBottoneTestoFinestre: true,
+      //BOTTONE COLORE TESTO FINESTRE
+      coloreTestoFinestre: "rgb(128, 0, 0)",
+      statoColoreTestoFinestre: true,
     };
   }
 
-  changeColor = () => {
+  changeCielo = () => {
     this.setState({
-      statoC: !this.state.statoC,
-      statoBottone: !this.state.statoBottone,
-      statoColorWord: !this.state.statoColorWord,
-      statoBottoneCielo: !this.state.statoBottoneCielo
+      statoColoreCielo: !this.state.statoColoreCielo,
+      statoBottoneColoreCielo: !this.state.statoBottoneColoreCielo,
+      statoBottoneTestoCielo: !this.state.statoBottoneTestoCielo,
+      statoColoreTestoCielo: !this.state.statoColoreTestoCielo,
     });
   };
-  
+
   changePorta = () => {
     this.setState({
-      statoPorta: !this.state.statoPorta,
-      statoBottonePorta: !this.state.statoBottonePorta
-    });
-  };
-  
+      statoColorePorta: !this.state.statoColorePorta,
+      statoBottoneColorePorta: !this.state.statoBottoneColorePorta,
+      statoBottoneTestoPorta: !this.state.statoBottoneTestoPorta,
+      statoColoreTestoPorta: !this.state.statoColoreTestoPorta
+    })
+  }
+
   changeFinestre = () => {
     this.setState({
-      statoFinestre: !this.state.statoFinestre,
-    });
-  };
-  
+      statoColoreFinestre: !this.state.statoColoreFinestre,
+      statoBottoneColoreFinestre: !this.state.statoBottoneColoreFinestre,
+      statoBottoneTestoFinestre: !this.state.statoBottoneTestoFinestre,
+      statoColoreTestoFinestre: !this.state.statoColoreTestoFinestre
+    })
+  }
 
   render() {
     return (
       <div
         className="container"
         style={{
-          backgroundColor: this.state.statoC
-            ? this.state.coloreC
-            : "rgb(25, 25, 112)",
-        }}
-      >
-        <Tetto/>
+          backgroundColor: this.state.statoColoreCielo
+            ? this.state.coloreCielo
+            : "rgb(10, 60, 151)",
+        }}>
+        <Tetto />
         <Facciata
-          statoP={this.state.statoPorta}
+          //COLORE PORTA
           coloreP={this.state.colorePorta}
-          statoF={this.state.statoFinestre}
+          statoCP={this.state.statoColorePorta}
+          //COLORE FINESTRE
           coloreF={this.state.coloreFinestre}
+          statoCF={this.state.statoColoreFinestre}
         />
         <Prato />
         <Console
-          //background CIELO
-          bckC={this.changeColor}
-          //background BOTTONE CIELO
-          coloreB={this.state.coloreBottone}
-          statoB={this.state.statoBottone}
-          //colore parola BOTTONE CIELO
-          coloreW={this.state.colorWord}
-          statoW={this.state.statoColorWord}
-          //parola BOTTONE CIELO
-          bottoneCieloW={this.state.bottoneCielo}
-          statoBottoneCieloW={this.state.statoBottoneCielo}
-
-          //background PORTA
-          bckP={this.changePorta}
-          //background colore BOTTONE PORTA
-          bottonePortaW={this.state.bottonePorta}
-          statoBottonePortaW={this.state.statoBottonePorta}
-          //colore parola BOTTONE PORTA
-
-          //parola BOTTONE PORTA
-          
-
-          //background FINESTRA
-          bckF={this.changeFinestre}
-          //background colore BOTTONE PORTA
-          
-          //colore parola BOTTONE PORTA
-
-          //parola BOTTONE PORTA
-
+          //COLORE CIELO
+          statoC={this.changeCielo}
+          //BOTTONE COLORE CIELO
+          coloreBC={this.state.bottoneColoreCielo}
+          statoBC={this.state.statoBottoneColoreCielo}
+          //BOTTONE TESTO CIELO
+          bottoneTC={this.state.bottoneTestoCielo}
+          statoBottoneTC={this.state.statoBottoneTestoCielo}
+          //BOTTONE COLORE TESTO CIELO
+          coloreTC={this.state.coloreTestoCielo}
+          statoColoreTC={this.state.statoColoreTestoCielo}
+          //COLORE CIELO
+          statoP={this.changePorta}
+          //BOTTONE COLORE PORTA
+          coloreBP={this.state.bottoneColorePorta}
+          statoBP={this.state.statoBottoneColorePorta}
+          //BOTTONE TESTO PORTA
+          bottoneTP={this.state.bottoneTestoPorta}
+          statoBottoneTP={this.state.statoBottoneTestoPorta}
+          //BOTTONE COLORE TESTO PORTA
+          coloreTP={this.state.coloreTestoPorta}
+          statoColoreTP={this.state.statoColoreTestoPorta}
+          //COLORE FINESTRE
+          statoF={this.changeFinestre}
+          //BOTTONE COLORE FINESTRE
+          coloreBF={this.state.bottoneColoreFinestre}
+          statoBF={this.state.statoBottoneColoreFinestre}
+          //BOTTONE TESTO FINESTRE
+          bottoneTF={this.state.bottoneTestoFinestre}
+          statoBottoneTF={this.state.statoBottoneTestoFinestre}
+          //BOTTONE COLORE TESTO FINESTRE
+          coloreTF={this.state.coloreTestoFinestre}
+          statoColoreTF={this.state.statoColoreTestoFinestre}
         />
       </div>
     );
   }
 }
-
