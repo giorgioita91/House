@@ -4,3 +4,5 @@
 [1114/195448.959:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
 [1114/214708.867:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
 [1115/133207.069:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
+[1116/175217.448:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)
+[1117/170834.257:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)

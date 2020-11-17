@@ -16,13 +16,13 @@ export default class Console extends Component {
           style={{
             backgroundColor: this.props.statoBC
               ? this.props.coloreBC
-              : "rgb(112, 203, 233)",
-            color: this.props.statoColoreTC
+              : "#1CACF4",
+            color: this.props.statoBC
               ? this.props.coloreTC
-              : "rgb(10, 60, 151)",
+              : "#041C94",
           }}
         >
-          {this.props.statoBottoneTC ? this.props.bottoneTC : "Giorno"}
+          {this.props.statoBC ? this.props.bottoneTC : "Giorno"}
         </button>
         <button
           className="Button porta"
@@ -30,13 +30,13 @@ export default class Console extends Component {
           style={{
             backgroundColor: this.props.statoBP
               ? this.props.coloreBP
-              : "rgb(128, 0, 0)",
-            color: this.props.statoColoreTP
+              : "#B40404",
+            color: this.props.statoBP
               ? this.props.coloreTP
-              : "rgb(255, 253, 143)",
+              : "#FCE474",
           }}
         >
-          {this.props.statoBottoneTP ? this.props.bottoneTP : "Chiudi la porta"}
+          {this.props.statoBP ? this.props.bottoneTP : "Chiudi la porta"}
         </button>
         <button
           className="Button finestre"
@@ -44,13 +44,13 @@ export default class Console extends Component {
           style={{
             backgroundColor: this.props.statoBF
               ? this.props.coloreBF
-              : "rgb(128, 0, 0)",
-            color: (this.props.statoColoreTF)
+              : "#B40404",
+            color: (this.props.statoBF)
             ? this.props.coloreTF
-            : "rgb(255, 253, 143)"
+            : "#FCE474"
           }}
         >
-          {this.props.statoBottoneTF ? this.props.bottoneTF : "Spegni le luci"}
+          {this.props.statoBF ? this.props.bottoneTF : "Spegni le luci"}
         </button>
       </div>
     );
